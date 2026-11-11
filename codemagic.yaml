@@ -1,0 +1,12 @@
+workflows:
+  android-workflow:
+    name: My Budget Android
+    max_build_duration: 60
+    environment:
+      java: 17
+    scripts:
+      - name: Build debug APK
+        script: |
+          gradle assembleDebug
+    artifacts:
+      - app/build/outputs/apk/debug/*.apk
